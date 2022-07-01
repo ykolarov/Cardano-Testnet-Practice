@@ -22,9 +22,7 @@ public class Main {
     private static void printPoolData() {
         PoolService poolService = new PoolServiceImpl(
                 Constants.BLOCKFROST_TESTNET_URL, System.getenv("PROJECT_ID"));
-        EpochService epochService = new EpochServiceImpl(
-                Constants.BLOCKFROST_TESTNET_URL, System.getenv("PROJECT_ID"));
-        try {
+       try {
             List<String> allPools = poolService.getAllPools();
             for (String poolString: allPools) {
                 Pool pool = poolService.getPool(poolString);
